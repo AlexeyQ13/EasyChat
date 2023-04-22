@@ -160,14 +160,14 @@ if CLIENT then
 			cur_seen_time = net.ReadInt(32)
 
 			if os.date("%D", last_seen_time) == os.date("%D", cur_seen_time) then
-				seen_date = "today"
+				seen_date = "сегодня"
 			elseif os.date("%D", last_seen_time) == os.date("%D", cur_seen_time - 86400) then
-				seen_date = "yesterday"
+				seen_date = "вчера"
 			else
 				seen_date = os.date("%D", last_seen_time)
 			end
 
-			formatted_diff = (" (%s ago)"):format(string.NiceTime(last_seen_diff))
+			formatted_diff = (" (%s назад)"):format(Alexey.NiceTime(last_seen_diff))
 		end
 
 		local ply_col = team.GetColor(team_id)
